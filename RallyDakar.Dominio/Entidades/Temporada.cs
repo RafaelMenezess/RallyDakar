@@ -11,7 +11,24 @@ namespace RallyDakar.Dominio.Entidades
         public DateTime DataInicio { get; set; }
         public DateTime? DataFim { get; set; }
 
-        public ICollection<Equipe> Equipes { get; set; }
+        public virtual ICollection<Equipe> Equipes { get; set; }
+
+        public Temporada()
+        {
+            Equipes = new List<Equipe>();
+        }
+
+        public void AdicionarEquipe(Equipe equipe)
+        {
+            if(equipe != null)
+            {
+                if (equipe.Validado())
+                {
+                    Equipes.Add(equipe);
+                }
+            }
+            
+        }
 
     }
 }

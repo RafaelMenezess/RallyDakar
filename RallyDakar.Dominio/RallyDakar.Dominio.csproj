@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Servicos\" />
     <Folder Include="Repositorios\" />
+    <Folder Include="Servicos\" />
   </ItemGroup>
 
 </Project>
