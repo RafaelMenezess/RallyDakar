@@ -13,7 +13,7 @@ namespace RallyDakar.Dominio.DbContexto
         public DbSet<Piloto> Pilotos { get; set; }
         public DbSet<Telemetria> Telemetria { get; set; }
 
-        public RallyDbContexto(DbContextOptions<RallyDbContexto>options) : base(options)
+        public RallyDbContexto(DbContextOptions<RallyDbContexto> options) : base(options)
         {
 
         }

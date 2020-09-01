@@ -20,14 +20,14 @@ namespace RallyDakar.Dominio.Entidades
 
         public void AdicionarEquipe(Equipe equipe)
         {
-            if(equipe != null)
+            if (equipe != null)
             {
                 if (equipe.Validado())
                 {
                     Equipes.Add(equipe);
                 }
             }
-            
+
         }
 
     }
