@@ -20,23 +20,6 @@ namespace RallyDakar.API.Controllers
             _pilotoRepositorio = pilotoRepositorio;
         }
 
-        [HttpGet]
-        public IActionResult ObterTodos()
-        {
-            try
-            {
-                var pilotos = _pilotoRepositorio.ObterTodos();
-                if (!pilotos.Any())
-                    return NotFound();
-
-                return Ok(_pilotoRepositorio.ObterTodos());
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, "ocorreu um erro interno no sistema. Por favor entre em contato com o suporte");
-            }
-        }
-
         [HttpGet("{id}", Name = "Obter")]
         public IActionResult Obter(int id)
         {
@@ -131,6 +114,12 @@ namespace RallyDakar.API.Controllers
             {
                 return StatusCode(500, "ocorreu um erro interno no sistema. Por favor entre em contato com o suporte");
             }
+        }
+        [HttpOptions]
+        public IActionResult ListarOperacoesPermitidas()
+        {
+            Response.Headers.Add("Alow", "GET, POST, PUT, DELETE, PATCH, OPTIONS");
+            return Ok();
         }
     }
 }
