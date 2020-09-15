@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using RallyDakar.API.Modelo;
 using RallyDakar.Dominio.Entidades;
 using RallyDakar.Dominio.Interfaces;
@@ -17,10 +18,13 @@ namespace RallyDakar.API.Controllers
     {
         private readonly IPilotoRepositorio _pilotoRepositorio;
         private readonly IMapper _mapper;
+        private readonly ILogger<PilotoController> _logger;
 
-        public PilotoController(IPilotoRepositorio pilotoRepositorio, IMapper _mapper)
+        public PilotoController(IPilotoRepositorio pilotoRepositorio, IMapper mapper, ILogger<PilotoController> logger )
         {
             _pilotoRepositorio = pilotoRepositorio;
+            _mapper = mapper;
+            _logger = logger;
         }
 
         [HttpGet("{id}", Name = "Obter")]
@@ -48,6 +52,7 @@ namespace RallyDakar.API.Controllers
         {
             try
             {
+                _logger.LogInformation("Adicionando um piloto novo");
                 var piloto = _mapper.Map<Piloto>(pilotoModelo);
 
                 if (_pilotoRepositorio.Existe(piloto.Id))
