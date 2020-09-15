@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1- WEB", "1- WEB", "{165A65
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.1 API", "1.1 API", "{13FB85EB-8273-495E-9E12-E1366915FB09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RallyDakar.API", "RallyDakar.API\RallyDakar.API.csproj", "{64B9A9B4-4FB7-44CF-B286-11AFAAA9DBC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RallyDakar.API", "RallyDakar.API\RallyDakar.API.csproj", "{64B9A9B4-4FB7-44CF-B286-11AFAAA9DBC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
